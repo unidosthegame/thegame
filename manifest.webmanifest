@@ -1,0 +1,15 @@
+{
+  "name": "Mundos Sem Noção — Luta de Rua",
+  "short_name": "Mundos Sem Noção",
+  "description": "Jogo de luta brasileiro em formato vertical.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#21191b",
+  "theme_color": "#21191b",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

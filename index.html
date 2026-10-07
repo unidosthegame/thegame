@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#21191b" />
+    <meta name="description" content="Mundos Sem Noção: jogo de luta brasileiro para celular." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mundos Sem Noção — Luta de Rua</title>
+  </head>
+  <body>
+    <main class="cabinet" aria-label="Jogo de luta">
+      <canvas id="arena" width="540" height="960" aria-label="Arena de luta"></canvas>
+
+      <div class="game-logo" aria-label="Mundos sem noção">
+        <span class="logo-crown">♛</span>
+        <strong>MUNDOS</strong>
+        <em>SEM NOÇÃO</em>
+      </div>
+
+      <section class="hud" aria-label="Placar">
+        <div class="fighter-card player-card">
+          <div class="portrait portrait-player" id="player-portrait" aria-hidden="true"></div>
+          <div class="fighter-stats">
+            <div class="name-line"><span id="player-name">KLEY</span><span class="side-label">P1</span></div>
+            <div class="health-track"><div id="player-health" class="health-fill"></div></div>
+          </div>
+        </div>
+        <div class="clock-stack"><span id="round-label">ROUND 1</span><div class="round-clock"><span id="clock">99</span></div></div>
+        <div class="fighter-card rival-card">
+          <div class="fighter-stats">
+            <div class="name-line"><span id="rival-name">SAMUKA</span><span class="side-label">CPU</span></div>
+            <div class="health-track"><div id="rival-health" class="health-fill"></div></div>
+          </div>
+          <div class="portrait portrait-rival" id="rival-portrait" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <button class="icon-button pause-button" id="pause-button" aria-label="Pausar jogo" title="Pausar">Ⅱ</button>
+      <button class="icon-button sound-button" id="sound-button" aria-label="Desativar som" title="Som">♫</button>
+      <div class="round-message" id="round-message" aria-live="polite"></div>
+
+      <section class="selection-screen" id="selection-screen" aria-label="Escolha de personagem">
+        <div class="select-heading">ESCOLHA SEU LUTADOR</div>
+        <div class="character-options">
+          <button class="character-card selected" type="button" data-character="kley" aria-pressed="true">
+            <span class="character-preview preview-kley" aria-hidden="true"></span>
+            <strong>KLEY</strong>
+            <small>O VIOLÃO VIRA ARMA</small>
+          </button>
+          <button class="character-card" type="button" data-character="samuka" aria-pressed="false">
+            <span class="character-preview preview-samuka" aria-hidden="true"></span>
+            <strong>SAMUKA</strong>
+            <small>FORÇA E RESISTÊNCIA</small>
+          </button>
+        </div>
+        <div class="stage-info" id="stage-info">PALCO: CENTRO HISTÓRICO · CLIMA NUBLADO</div>
+        <div class="asset-status" id="asset-status">CARREGANDO PERSONAGENS E CENÁRIOS…</div>
+        <button class="start-button" id="ready-button" disabled>ENTRAR NA ARENA <span>↗</span></button>
+      </section>
+
+      <section class="controls" aria-label="Controles do jogo">
+        <div class="controls-title">3 MOVIMENTOS</div>
+        <div class="movement" aria-label="Movimentação">
+          <button class="move-button" data-control="left" aria-label="Mover para a esquerda">◀</button>
+          <button class="move-button" data-control="right" aria-label="Mover para a direita">▶</button>
+        </div>
+        <div class="actions" aria-label="Ataques">
+          <button class="action-button punch" data-control="punch" aria-label="Soco"><span class="button-orb">✊</span><b>SOCO</b></button>
+          <button class="action-button kick" data-control="kick" aria-label="Chute"><span class="button-orb">🦵</span><b>CHUTE</b></button>
+          <button class="action-button defend" data-control="defend" aria-label="Defesa"><span class="button-orb">🛡</span><b>DEFESA</b></button>
+        </div>
+      </section>
+
+      <section class="screen-card hidden" id="screen-card" aria-labelledby="screen-title">
+        <div class="eyebrow">FIM DE LUTA · MELHOR DE 3</div>
+        <h1 id="screen-title">VITÓRIA!</h1>
+        <p id="screen-copy">A arena é sua.</p>
+        <button class="start-button" id="start-button">ESCOLHER LUTADOR <span>↗</span></button>
+        <p class="hint" id="screen-hint">Toque nos controles para jogar de novo.</p>
+      </section>
+      <div class="footer-label">MUNDOS SEM NOÇÃO · DEMO</div>
+    </main>
+    <script src="game.js" defer></script>
+  </body>
+</html>
